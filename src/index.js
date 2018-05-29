@@ -8,10 +8,13 @@ const styles = {
 
 class App extends React.Component {
   render() {
-    <div>
-      <ul>
-        <li></li>
-      </ul>
-    </div>
+    return (
+      <div>
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+    )
+    
   }
 }
