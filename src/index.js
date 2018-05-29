@@ -6,6 +6,14 @@ const styles = {
   textAlign: "center"
 };
 
+const Todo = props => (
+  <li>
+    <input type="checkbox" />
+    <span>{props.text}</span>
+    <button>Delete</button>
+  </li>
+);
+
 class App extends React.Component {
   constructor() {
     super();
