@@ -7,14 +7,17 @@ const styles = {
 };
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      todos: []
+    };
+  }
   render() {
     return (
       <div>
-        <ul>
-          <li></li>
-        </ul>
+        <ul>{this.state.todos.map(todo => <Todo todo={todo} />)};</ul>
       </div>
-    )
-    
+    );
   }
 }
