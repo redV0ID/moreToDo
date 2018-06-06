@@ -9,7 +9,7 @@ const styles = {
 const Todo = props => (
   <li>
     <input type="checkbox" />
-    <span>{props.text}</span>
+    <span>{props.todo.text}</span>
     <button>Delete</button>
   </li>
 );
@@ -21,11 +21,20 @@ class App extends React.Component {
       todos: []
     };
   }
+
+  addTodo() {
+    const text = prompt("Write something!");
+    this.setState({
+      todos: [...this.state.todos, { text: text }] //nice
+    });
+  }
   render() {
     return (
       <div>
-        <ul>{this.state.todos.map(todo => <Todo todo={todo} />)};</ul>
+        <button onClick={() => this.addTodo()}>Add Todo</button>
+        <ul>{this.state.todos.map(todo => <Todo todo={todo} />)}</ul>
       </div>
     );
   }
 }
+render(<App />, document.getElementById("root"));
